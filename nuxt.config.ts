@@ -10,4 +10,17 @@ export default defineNuxtConfig({
 			subsets: ['cyrillic-ext', 'cyrillic', 'greek-ext', 'greek', 'vietnamese', 'latin-ext', 'latin'],
 		},
 	},
+	ssr: true,
+	app: {
+		baseURL: '/passengerEconomy/',
+		buildAssetsDir: 'assets',
+	},
+	nitro: {
+		preset: 'github_pages',
+	},
+	runtimeConfig: {
+		public: {
+			baseURL: process.env.NODE_ENV === 'production' ? '/passengerEconomy/' : '/',
+		},
+	},
 });
